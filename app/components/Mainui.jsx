@@ -35,46 +35,62 @@ const Mainui = () => {
     //         requestNotificationPermission();
     //     }
     // },[requestNotificationPermission]);
-        const sendNotification = () => {
-            if ('Notification' in window && Notification.permission === 'granted') {
-                const notification = new Notification('Hello Developers!!', {
-                   body: 'This is your notification message!!'
+    const sendNotification = () => {
+        if ('serviceWorker' in navigator) {
+            // Register service worker
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(registration => {
+                    // Check if permission is granted
+                    if (Notification.permission === 'granted') {
+                        registration.showNotification('Hello Developers!!', {
+                            body: 'This is your notification message!!'
+                        });
+                    } else {
+                        console.log('Notification permission not granted.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Service worker registration failed:', error);
+                    // Fallback to standard notification if service worker registration fails
+                    if ('Notification' in window && Notification.permission === 'granted') {
+                        new Notification('Hello Developers!!', {
+                            body: 'This is your notification message!!'
+                        });
+                    }
                 });
-            // Handling click on notification for mobile devices
-                notification.onclick = function () {
-                     window.focus(); // Bring the browser window to the foreground
-                    notification.close(); // Close the notification
-                // Add any action you want to perform when notification is clicked
-                // For example, redirect to a specific URL
-                // window.location.href = "https://example.com";
-                };
-            }
-        };
+        } else if ('Notification' in window && Notification.permission === 'granted') {
+            // Fallback to standard notification if service workers are not supported
+            new Notification('Hello Developers!!', {
+                body: 'This is your notification message!!'
+            });
+        }
+    };
     
-        const requestNotificationPermission = useCallback(() => {
-            if ('Notification' in window) {
-                 Notification.requestPermission().then(function (permission) {
-                    if (permission === 'granted') {
+    const requestNotificationPermission = useCallback(() => {
+        if ('Notification' in window) {
+            Notification.requestPermission().then(permission => {
+                if (permission === 'granted') {
                     console.log('Notification permission granted!!');
                     sendNotification();
+                } else {
+                    console.log('Notification permission denied');
                 }
+            }).catch(error => {
+                console.error('Error requesting notification permission:', error);
             });
-            }
-        }, []);
+        } else {
+            console.log('Browser does not support notifications');
+        }
+    }, []);
     
     useEffect(() => {
-        // Check if browser supports notifications
         if ('Notification' in window) {
-            // Check if the device supports notifications (particularly mobile devices)
-            if (navigator && navigator.userAgent && /(android|iphone|ipad)/i.test(navigator.userAgent)) {
-                // Handle mobile behavior here, maybe show a custom notification
-                // Or prompt the user to enable browser notifications
-            } else {
-                // For desktop, proceed with requesting permission and sending notifications
-                requestNotificationPermission();
-            }
+            requestNotificationPermission();
+        } else {
+            console.log('Browser does not support notifications');
         }
     }, [requestNotificationPermission]);
+    
 
 
     
