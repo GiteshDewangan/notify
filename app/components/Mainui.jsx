@@ -37,7 +37,6 @@ const Mainui = () => {
     // },[requestNotificationPermission]);
     const sendNotification = () => {
         if ('serviceWorker' in navigator) {
-            // Register service worker
             navigator.serviceWorker.register('/service-worker.js')
                 .then(registration => {
                     // Check if permission is granted
@@ -51,20 +50,17 @@ const Mainui = () => {
                 })
                 .catch(error => {
                     console.error('Service worker registration failed:', error);
-                    // Fallback to standard notification if service worker registration fails
-                    if ('Notification' in window && Notification.permission === 'granted') {
-                        new Notification('Hello Developers!!', {
-                            body: 'This is your notification message!!'
-                        });
-                    }
                 });
         } else if ('Notification' in window && Notification.permission === 'granted') {
             // Fallback to standard notification if service workers are not supported
             new Notification('Hello Developers!!', {
                 body: 'This is your notification message!!'
             });
+        } else {
+            console.log('Service workers are not supported.');
         }
     };
+    
     
     const requestNotificationPermission = useCallback(() => {
         if ('Notification' in window) {
