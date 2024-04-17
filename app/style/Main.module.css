@@ -82,6 +82,14 @@
     margin-bottom: 10px;
     font-weight: normal; /* Reduce font weight */
 }
+.H1 {
+    text-align: center;
+    font-size: 22px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 10px;
+    font-weight: normal; /* Reduce font weight */
+}
 
 .H2 {
     text-align: center;
