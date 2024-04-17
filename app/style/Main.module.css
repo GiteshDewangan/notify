@@ -26,7 +26,7 @@
   bottom: 50px;
   margin: auto;
   margin-bottom: 10px;
-  font-weight: ;
+  font-weight: bold;
   outline: none;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0) -10.64%, #DF522B 51.94%, rgba(0, 1, 0, 1) 116.51%);
        
@@ -45,7 +45,8 @@
   border-image-outset: 0 0 0 0;
   border-image-repeat: stretch; 
   border-radius: 9px; 
-  box-shadow:-3px 0px 0-3px #000, 1.7px 0 0  #C6802C; 
+  box-shadow: 1px 0 0 #C6802C;
+
 } 
 
 .Bu::before {
@@ -67,16 +68,11 @@
   bottom: -0px; /* Adjust to close the gap */
   width: 50%; /* Set the width of the right half */
   background: linear-gradient( to left 0deg, rgba(0, 13, 61, 0) -13.1%, #DE502C 53.99%, #C6802C 180.76%); /* Set gradient background for the right half */
- 
 
   border-radius: 0 8px 8px 0;
   z-index: -1;
   border: 1.4px solid linear-gradient(90deg, rgba(157, 13, 61, 0) -13.1%, #DE502C 53.99%, #C6802C 113.76%); /* Set internal border color to match button's left border color */
-
-}
-
-
-      
+} 
 /* In your CSS file */
 .H1 {
     text-align: center;
