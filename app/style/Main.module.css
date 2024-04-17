@@ -26,7 +26,7 @@
   bottom: 50px;
   margin: auto;
   margin-bottom: 10px;
-  font-weight: bold;
+  font-weight: ;
   outline: none;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0) -10.64%, #DF522B 51.94%, rgba(0, 1, 0, 1) 116.51%);
        
@@ -45,8 +45,7 @@
   border-image-outset: 0 0 0 0;
   border-image-repeat: stretch; 
   border-radius: 9px; 
-  box-shadow: 1px 0 0 #C6802C;
-
+  box-shadow:-3px 0px 0-3px #000, 1.7px 0 0  #C6802C; 
 } 
 
 .Bu::before {
@@ -55,11 +54,9 @@
   top: -1px; /* Adjust to match the border thickness and close the gap */
   right: -1.4px; /* Adjust to match the border thickness and close the gap */
   bottom: -1px; /* Adjust to match the border thickness and close the gap */
-  left: 0cqh; /* Adjust to match the border thickness and close the gap */
-  border-radius: 8px; /* Adjust to match the button's border-radius */
-  border: 1.4px solid #C6802C; /* Set internal border color to match button's left border color */
-
-  border: 1.4px solid tr #bc8737;/* Set internal border color to match button's left border color */
+  left: -1.4px; /* Adjust to match the border thickness and close the gap */
+  border-radius: 9px; /* Adjust to match the button's border-radius */
+  border: 1.7px solid transparent #DF522B; /* Set internal border color to match button's body color */
 }
 
 .Bu::after {
@@ -70,6 +67,7 @@
   bottom: -0px; /* Adjust to close the gap */
   width: 50%; /* Set the width of the right half */
   background: linear-gradient( to left 0deg, rgba(0, 13, 61, 0) -13.1%, #DE502C 53.99%, #C6802C 180.76%); /* Set gradient background for the right half */
+ 
 
   border-radius: 0 8px 8px 0;
   z-index: -1;
