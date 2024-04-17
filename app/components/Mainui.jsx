@@ -6,35 +6,9 @@ import style2 from '../../public/images/top.png'
 import style3 from '../../public/images/circle.png'
 
 
+
 const Mainui = () => {
     
-    // const sendNotification = () =>{
-    //     if ('Notification' in window && Notification.permission === 'granted'){
-    //         new Notification('Hello Developers!!',{
-    //             body: 'This is your notification messege!!',
-               
-    //         })
-
-    //     }
-    // } ;
-
-    // const requestNotificationPermission = useCallback(() => {
-    //     if( 'Notification' in window){
-    //         Notification.requestPermission().then(function(permission){
-    //             if (permission=== 'granted'){
-    //                 console.log('Notification  permission granted!!')
-    //                 sendNotification();
-    //             }
-    //         });
-    //     }
-
-    // }, []);
-
-    // useEffect(() => {
-    //     if ('Notification' in window ){
-    //         requestNotificationPermission();
-    //     }
-    // },[requestNotificationPermission]);
     const sendNotification = () => {
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/service-worker.js')
@@ -79,13 +53,13 @@ const Mainui = () => {
         }
     }, []);
     
-    useEffect(() => {
-        if ('Notification' in window) {
-            requestNotificationPermission();
-        } else {
-            console.log('Browser does not support notifications');
-        }
-    }, [requestNotificationPermission]);
+    // useEffect(() => {
+    //     if ('Notification' in window) {
+    //         requestNotificationPermission();
+    //     } else {
+    //         console.log('Browser does not support notifications');
+    //     }
+    // }, [requestNotificationPermission]);
     
 
 
@@ -97,11 +71,13 @@ const Mainui = () => {
         <>
         <div className={style.Main}>
         <Image src={style2} width={300} height={40}/>
-        <h1 className={style.H1}>lorem ipsum...</h1>
+        <h1 className={style.H1} >Lorem Ipsum...</h1>
         <h2 className={style.H2}>Lorem ipsum dolor sit amet.</h2>
-        <Image src={style3} width={300} height={290} style={{ marginTop: '40px' }} />
+        <div className={style.imageContainer} style={{ backgroundColor: 'black', width: '300px', height: '200px', marginTop: '85px' }}>
+           <Image src={style3} width={300} height={300} />
+        </div>
 
-        <button onClick={sendNotification} className={style.Bu}>Send Notification</button>
+        <button onClick={sendNotification} className={style.Bu} style={{color: 'white'}}>Send Notification</button>
         </div>
         </>
     );
