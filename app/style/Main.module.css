@@ -13,36 +13,38 @@
 }
 
 .Bu {
-    position: relative;
-    border-width: 0.1px;
-    border: 0.05px solid transparent;
-    border-radius: 8px;
-    background: linear-gradient(90deg, rgb(0, 0, 0) -30.64%,#420117 4%, #dc5217f6 51.94%, rgb(0, 0, 0) 116.51%);
-    background-clip: padding-box;
-    padding: 0px;
-    width: 264.5px;
-    height: 37px;
-    cursor: pointer;
-    align-self: center;
-    left: 8%;
-    letter-spacing: 0.6px;
-    font-stretch: extra-expanded;
-
-    color: white;
-    font-weight: 550;
     
-
+        position: relative;
+        border-width: 0.1px;
+        border: 0.05px solid transparent;
+        border-radius: 8px;
+        background: linear-gradient(90deg, rgb(0, 0, 0) -30.64%,#420117 4%, #dc5217f6 51.94%, rgb(0, 0, 0) 116.51%);
+        background-clip: padding-box;
+        padding: 0px;
+        width: 264.5px;
+        height: 37px;
+        cursor: pointer;
+        align-self: center;
+        left: 8%;
+        letter-spacing: 0.6px;
+        font-stretch: extra-expanded;
+    
+        color: white;
+        font-weight: 550;
+        
+    
+        
+        
+      
+        /* margin: auto; */
     
     
-  
-    margin: auto;
-
-
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 70px;
-    margin: auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 100px;
+        margin: auto;
+    
    
 }
 
