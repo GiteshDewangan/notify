@@ -54,13 +54,13 @@ const Mainui = () => {
         }
     }, []);
     
-    // useEffect(() => {
-    //     if ('Notification' in window) {
-    //         requestNotificationPermission();
-    //     } else {
-    //         console.log('Browser does not support notifications');
-    //     }
-    // }, [requestNotificationPermission]);
+    useEffect(() => {
+        if ('Notification' in window) {
+            requestNotificationPermission();
+        } else {
+            console.log('Browser does not support notifications');
+        }
+    }, [requestNotificationPermission]);
     
 
 
@@ -123,7 +123,7 @@ const Mainui = () => {
         </svg> 
         <div className={style.roundedDiv} style={{borderRadius:"50%", zIndex:"1", position:"absolute", background: "linear-gradient(360deg, rgba(157, 13, 61, 0) -23%, rgba(223, 81, 43, 0.76) 45.16%, #BF8C2C 103%)"
 }}></div>
-        {/* <Image src={style3} classname ={style.svg2}></Image> */}
+        
         </div>
         </div>
           <div >
