@@ -1,88 +1,69 @@
 .Main{
     width:300px;
-    height:650px;
-    background-color:red;
+    height:647px;
+  
     position: relative;
-    left:0;
+    left: 0px;
     right:0;
     top:30px;
     bottom: 50px;
     margin:auto;
     background-color: black;
+    z-index: -2;
 }
 
- 
-
-
 .Bu {
-  width: calc(100% - 50px);
-  max-width: 327px;
-  height: 36px;
-  padding: 0px 0px 0px 0px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 50px;
-  margin: auto;
-  margin-bottom: 10px;
-  font-weight: bold;
-  outline: none;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0) -10.64%, #DF522B 51.94%, rgba(0, 1, 0, 1) 116.51%);
-       
+    position: relative;
+    border-width: 0.1px;
+    border: 0.05px solid transparent;
+    border-radius: 8px;
+    background: linear-gradient(90deg, rgb(0, 0, 0) -30.64%,#420117 4%, #dc5217f6 51.94%, rgb(0, 0, 0) 116.51%);
+    background-clip: padding-box;
+    padding: 0px;
+    width: 264.5px;
+    height: 37px;
+    cursor: pointer;
+    align-self: center;
+    left: 8%;
+    letter-spacing: 0.6px;
+    font-stretch: extra-expanded;
 
-  text-align: center;
-  line-height: -50px;
-  color: #FFFFFF;
- 
+    color: white;
+    font-weight: 550;
+    
+
+    
+    
   
-  border-width: 1.7px;
-  border-style: solid transparent;
-  border-image-slice: 1 ;
-  border-radius: 9px 9px 9px 9px;
-  border-image-source: linear-gradient(to right, rgba(0,1,0), #DE502C , #C6802C, rgba(0, 20000,0, 0));
+    margin: auto;
 
-  border-image-outset: 0 0 0 0;
-  border-image-repeat: stretch; 
-  border-radius: 9px; 
-  box-shadow: 1px 0 0 #C6802C;
 
-} 
-
-.Bu::before {
-  content: ''; /* Create a pseudo-element for the internal border */
-  position: absolute;
-  top: -1px; /* Adjust to match the border thickness and close the gap */
-  right: -1.4px; /* Adjust to match the border thickness and close the gap */
-  bottom: -1px; /* Adjust to match the border thickness and close the gap */
-  left: -1.4px; /* Adjust to match the border thickness and close the gap */
-  border-radius: 9px; /* Adjust to match the button's border-radius */
-  border: 1.7px solid transparent #ccbb26; /* Set internal border color to match button's body color */
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100px;
+    margin: auto;
+   
 }
 
 .Bu::after {
-  content: ''; /* Create a pseudo-element for the outline */
-  position: absolute;
-  top: -1.4px; /* Adjust to close the gap */
-  right: -1.4px; /* Adjust to close the gap */
-  bottom: -0px; /* Adjust to close the gap */
-  width: 50%; /* Set the width of the right half */
-  background: linear-gradient( to left 0deg, rgba(0, 13, 61, 0) -13.1%, #DE502C 53.99%, #C6802C 180.76%); /* Set gradient background for the right half */
-
-  border-radius: 0 8px 8px 0;
-  z-index: -1;
-  border: 1.4px solid linear-gradient(90deg, rgba(157, 13, 61, 0) -13.1%, #DE502C 53.99%, #C6802C 113.76%); /* Set internal border color to match button's left border color */
-} 
-.H1 {
-    text-align: center;
-    font-size: 22px;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    margin-bottom: 10px;
-    font-weight: normal; /* Reduce font weight */
+    position: absolute;
+    top: -0.7px; bottom: -0.9px;
+    left: -1px; right: -1.2px;
+    background: linear-gradient(90deg, transparent, #ff8c00d4);
+    content: '';
+     z-index: -1; 
+    border-radius: 0 8px 8px 0;
+    
 }
+
+
+
+
+
 .H1 {
     text-align: center;
-    font-size: 22px;
+    font-size: 23.4px;
     color: white;
     font-family: 'Inter', sans-serif;
     margin-bottom: 10px;
@@ -91,7 +72,7 @@
 
 .H2 {
     text-align: center;
-    font-size: 14px;
+    font-size: 15.2px;
     color: gray;
     font-family: 'Inter', sans-serif;
     margin-top: 0;
@@ -99,4 +80,21 @@
 }
 
 
+
+.imageContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+   position: relative;
+}
+.svg1{
+    position: absolute;
+    z-index: 2;
+
+}
+.svg2{
+    position: relative;
+    z-index: 999;
+}
 
