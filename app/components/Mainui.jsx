@@ -122,7 +122,9 @@ const Mainui = () => {
         </defs>
         </svg> 
         <div className={style.roundedDiv} style={{borderRadius:"50%", zIndex:"1", position:"absolute", background: "linear-gradient(360deg, rgba(157, 13, 61, 0) -23%, rgba(223, 81, 43, 0.76) 45.16%, #BF8C2C 103%)"
-          }}></div>
+}}>
+
+          </div>
         
         </div>
         </div>
