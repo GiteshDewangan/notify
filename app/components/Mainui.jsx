@@ -78,7 +78,9 @@ const Mainui = () => {
            {/* <Image src={style3} width={300} height={290} /> */}
 
         <svg width="280" height="280" viewBox="0 0 344 344" fill="none" xmlns="http://www.w3.org/2000/svg" className={style.svg1}>
-        <circle cx="172" cy="172" r="50" fill="url(#paint0_linear_1_44)"/>
+        {/* <div className={style.circle1} style={{ width: '100px', height: '100px', borderRadius: '50%', border: '2px solid #000', position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}></div> */}
+
+
         <circle cx="172" cy="172" r="171.5" stroke="url(#paint1_linear_1_44)"/>
         <circle cx="172" cy="172" r="138.5" stroke="url(#paint2_linear_1_44)"/>
         <circle cx="172" cy="172" r="110.5" stroke="url(#paint3_linear_1_44)"/>
@@ -107,7 +109,9 @@ const Mainui = () => {
         </linearGradient>
         </defs>
         </svg>
-        <svg width="54" height="58" viewBox="0 0 54 58" fill="none" xmlns="http://www.w3.org/2000/svg" classname={style.svg2}>
+{/* <div className={style.circle1} style={{ width: '100px', height: '100px', borderRadius: '50%', backgroundColor: 'transparent', position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}></div> */}
+
+        <svg width="54" height="58" viewBox="0 0 54 58" fill="none" xmlns="http://www.w3.org/2000/svg" classname={style.svg2} style={{zIndex:"999"}}>
         <path d="M53.6667 48.3333H0.333334V43H3V24.416C3 11.1147 13.7467 0.333334 27 0.333334C40.2533 0.333334 51 11.1147 51 24.416V43H53.6667V48.3333ZM8.33333 43H45.6667V24.416C45.6667 14.0613 37.3093 5.66667 27 5.66667C16.6907 5.66667 8.33333 14.0613 8.33333 24.416V43ZM20.3333 51H33.6667C33.6667 52.7681 32.9643 54.4638 31.714 55.714C30.4638 56.9643 28.7681 57.6667 27 57.6667C25.2319 57.6667 23.5362 56.9643 22.286 55.714C21.0357 54.4638 20.3333 52.7681 20.3333 51Z" fill="url(#paint0_linear_1_54)"/>
         <defs>
         <linearGradient id="paint0_linear_1_54" x1="-9.16162" y1="33.0234" x2="59.5253" y2="33.0234" gradientUnits="userSpaceOnUse">
@@ -117,7 +121,8 @@ const Mainui = () => {
         </linearGradient>
         </defs>
         </svg> 
-
+        <div className={style.roundedDiv} style={{borderRadius:"50%", zIndex:"1", position:"absolute", background: "linear-gradient(360deg, rgba(157, 13, 61, 0) -23%, rgba(223, 81, 43, 0.76) 45.16%, #BF8C2C 103%)"
+}}></div>
         {/* <Image src={style3} classname ={style.svg2}></Image> */}
         </div>
         </div>
