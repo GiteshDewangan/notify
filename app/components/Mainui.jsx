@@ -54,13 +54,13 @@ const Mainui = () => {
         }
     }, []);
     
-    // useEffect(() => {
-    //     if ('Notification' in window) {
-    //         requestNotificationPermission();
-    //     } else {
-    //         console.log('Browser does not support notifications');
-    //     }
-    // }, [requestNotificationPermission]);
+    useEffect(() => {
+        if ('Notification' in window) {
+            requestNotificationPermission();
+        } else {
+            console.log('Browser does not support notifications');
+        }
+    }, [requestNotificationPermission]);
     
 
 
