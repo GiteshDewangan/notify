@@ -20,6 +20,7 @@ const Mainui = () => {
                             body: 'This is your notification message!!'
                         });
                     } else {
+                        requestNotificationPermission();
                         console.log('Notification permission not granted.');
                     }
                 })
@@ -37,7 +38,7 @@ const Mainui = () => {
     };
     
     
-    const requestNotificationPermission = useCallback(() => {
+    const requestNotificationPermission = () => {
         if ('Notification' in window) {
             Notification.requestPermission().then(permission => {
                 if (permission === 'granted') {
@@ -52,7 +53,23 @@ const Mainui = () => {
         } else {
             console.log('Browser does not support notifications');
         }
-    }, []);
+    };
+    // const requestNotificationPermission = useCallback(() => {
+    //     if ('Notification' in window) {
+    //         Notification.requestPermission().then(permission => {
+    //             if (permission === 'granted') {
+    //                 console.log('Notification permission granted!!');
+    //                 sendNotification();
+    //             } else {
+    //                 console.log('Notification permission denied');
+    //             }
+    //         }).catch(error => {
+    //             console.error('Error requesting notification permission:', error);
+    //         });
+    //     } else {
+    //         console.log('Browser does not support notifications');
+    //     }
+    // }, []);
     
     useEffect(() => {
         if ('Notification' in window) {
@@ -62,16 +79,13 @@ const Mainui = () => {
         }
     }, [requestNotificationPermission]);
     
-
-
-    
    
 
 
     return (
         <>
         <div className={style.Main}>
-           <Image src={style2} width={300} height={40}/>
+           <Image src={style2} width={300} height={40} style={{zIndex:-255}}/>
         <h1 className={style.H1} >Lorem Ipsum...</h1>
         <h2 className={style.H2}>Lorem ipsum dolor sit amet.</h2>
        <div className={style.imageContainer} style={{ backgroundColor: 'black', width: '300px', height: '200px', marginTop: '90px' }}>
@@ -122,19 +136,13 @@ const Mainui = () => {
         </defs>
         </svg> 
         <div className={style.roundedDiv} style={{borderRadius:"50%", zIndex:"1", position:"absolute", background: "linear-gradient(360deg, rgba(157, 13, 61, 0) -23%, rgba(223, 81, 43, 0.76) 45.16%, #BF8C2C 103%)"
-}}>
-
-          </div>
-        
-        
+}}></div>
+        {/* <Image src={style3} classname ={style.svg2}></Image> */}
         </div>
-
-          <div classname = {style.B}>
+        </div>
+          <div className={style.bottomDiv}>
          <button onClick={sendNotification} className={style.Bu} >Send Notification</button>
-
-          </div>
-          </div>
-
+         </div>
         </>
     );
 
