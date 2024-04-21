@@ -126,12 +126,14 @@ const Mainui = () => {
 
           </div>
         
-        </div>
+        
         </div>
 
-          <div >
+          <div classname = {style.B}>
          <button onClick={sendNotification} className={style.Bu} >Send Notification</button>
-         </div>
+
+          </div>
+          </div>
 
         </>
     );
